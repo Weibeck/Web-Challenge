@@ -2,26 +2,22 @@
 // Sequelizer + Sequelizer cli - writing/reading DB
 
 const express = require("express");
-const app = express()
-const cors = require("cors")
+const app = express();
+const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
 
-const db = require('./models')
-
+const db = require("./models");
 
 // Routes
-const userRouter = require('./routes/Users')
-const registerRouter = require('./routes/Register')
-app.use("/users", userRouter)
-app.use("/register", registerRouter)
+const userRouter = require("./routes/Users");
+const registerRouter = require("./routes/Register");
+app.use("/users", userRouter);
+app.use("/register", registerRouter);
 
 db.sequelize.sync().then(() => {
-    app.listen(3001, () => {
+  app.listen(3001, () => {
     console.log("Server Up - 3001");
-    });
+  });
 });
-
-
-
