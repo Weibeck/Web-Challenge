@@ -1,6 +1,6 @@
 import Axios from "axios";
 import React from "react";
-import "./Login.css"
+import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -13,9 +13,9 @@ function Login() {
 
   React.useEffect(() => {
     const UserLoggedIn = localStorage.getItem("user");
-    if( UserLoggedIn ){
+    if (UserLoggedIn) {
       const UserFound = UserLoggedIn;
-      setUser(UserFound)
+      setUser(UserFound);
     }
   }, []);
 
@@ -24,11 +24,10 @@ function Login() {
     setUsername("");
     setPassword("");
     localStorage.clear();
-    window.location.reload(false)
-  }
+    window.location.reload(false);
+  };
 
   let navigate = useNavigate();
-
 
   // Login checks
   const login = () => {
@@ -36,14 +35,13 @@ function Login() {
       username: username,
       password: password,
     }).then((res) => {
-      if(res.data.message === null){
+      if (res.data.message === null) {
         setUser(res.data);
-        localStorage.setItem('user', res.data);
-        navigate("/profile")
-      }else{
-        setLoggedinStatus(res.data.message)
+        localStorage.setItem("user", res.data);
+        navigate("/profile");
+      } else {
+        setLoggedinStatus(res.data.message);
       }
-
     });
   };
 
@@ -53,40 +51,59 @@ function Login() {
     });
   }, []);*/
 
-  if(user){
-    console.log(user)
-    return <div>
-      <h1>{user.username}Already logged in!</h1>
-      <button onClick={() => {navigate("/profile");}}> Return to your Profile</button>
-      <button onClick={logOut}> Log Out</button>
-      </div>;
-  }else {
+  if (user) {
+    console.log(user);
     return (
       <div>
+        <h1>{user.username}Already logged in!</h1>
+        <button
+          onClick={() => {
+            navigate("/profile");
+          }}
+        >
+          {" "}
+          Return to your Profile
+        </button>
+        <button onClick={logOut}> Log Out</button>
+      </div>
+    );
+  } else {
+    return (
+      <div className="container">
         <div className="Login">
-          <h1> Hackathon </h1>
-          <label>Username</label>
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-          />
-          <label>Password</label>
-          <input
-            type="text"
-            placeholder="Password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-          <button onClick={login}> Login </button>
+          <h1 className="top-pos"> Hackathon </h1>
+          <div>
+            <input className="child-container left"
+              type="text"
+              placeholder="Username"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            />
+            <input className="child-container right"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <button className="login-btn" onClick={login}> </button>
+          </div>
         </div>
-  
+
         <h1>{loggedinStatus}</h1>
-  
-        <h1>New to hackathon? <button onClick={() => {navigate("/signup");}}>Sign Up</button></h1>
+
+        <h1 className="bot-pos">
+          New to hackathon?{" "}
+          <span
+            className="text-yellow"
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Sign up
+          </span>
+        </h1>
       </div>
     );
   }

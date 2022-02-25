@@ -1,3 +1,18 @@
 .App {
   text-align: center;
 }
+
+html, body {
+  margin:0px;
+  height:100%;
+  font-family: Sans-Serif;
+}
+
+.bg-image{
+  background-image: url("./assets/Background.webp");
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}

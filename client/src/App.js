@@ -13,10 +13,10 @@ import {
 export default function App() {
 
 
-  
+
   return (
 <Router>
-      <div>
+      <div className="bg-image">
          <Routes>
           <Route exact path="/" element={<Login />}>
           </Route>          

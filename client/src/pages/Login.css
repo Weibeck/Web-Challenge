@@ -1,0 +1,114 @@
+.container{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    height: 90%;
+}
+
+.child-container{
+width:20%;
+}
+
+.Login{
+    height: 80%;
+    /* Center horizontally*/
+    margin: 0 auto;
+}
+
+h1{
+    letter-spacing: 1px;
+    text-align: center;
+    color:white;
+}
+
+input{
+    background: none;
+    border:0;
+    border-bottom: 4px solid white;
+    width:10%;
+    color:white;
+    font-size: 35px;
+}
+
+input::placeholder{
+    color:white;
+    opacity: 1;
+        
+}
+
+input:focus{
+    outline: 0;
+}
+input:focus::placeholder {
+    color: transparent;
+  }
+
+input:placeholder-shown{
+    
+}
+
+.login-btn{
+    background:url("../assets/Login_button.webp") no-repeat;
+    cursor:pointer;
+    border:none;
+    width:421px;
+    height:93px;
+    position:absolute;
+    bottom: 30%;
+    left:40%;
+    right: 40%;
+}
+
+.top-pos{
+    margin-top: 5%;
+    font-size: 90px;
+    font-weight: 500;
+}
+
+.bot-pos{
+    text-align: center;
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.right{
+    margin-top: 45px;
+    right:23%;
+    position: absolute;
+}
+
+.left{
+    margin-top: 45px;
+    left:23%;
+    position:absolute;
+}
+
+.text-yellow{
+color:yellow;
+}
+.text-yellow:hover{
+color:black;
+cursor: pointer;
+}
+
+
+/* Mobile */
+@media only screen and (min-width: 640px) {
+    .login-btn{
+        width:421px;
+        height:93px;
+        position:absolute;
+        
+    }
+    .h1{
+        font-size: 20px;
+    }
+
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 1024px) {
+
+
+}
