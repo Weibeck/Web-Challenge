@@ -1,0 +1,64 @@
+.grid{
+    display: grid;
+    grid-template-columns: 475px 475px 475px;
+    grid-template-rows: auto auto auto;
+    grid-gap: 75px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.item{
+    background-image: url("../assets/Container.webp");
+    width: 420px;
+    height: 310px;
+
+}
+
+input {
+    background: none;
+    border: 0;
+    border-bottom: 4px solid white;
+    width:100%;
+    color: white;
+    font-size: 35px;
+  }
+  
+  input::placeholder {
+    color: white;
+    opacity: 1;
+  }
+  
+  input:focus {
+    outline: 0;
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
+.btn-register{
+    background: url("../assets/Register_button.webp") no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 421px;
+    height: 93px;
+}
+
+.btn-default {
+	background-color:#ffe65a;
+	border-radius:40px;
+	border:1px solid #ffe75e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:30px;
+	padding:30px 59px;
+	text-decoration:none;
+}
+.btn-default:hover {
+	background-color:#ffe75e;
+}
+.btn-default:active {
+	position:relative;
+	top:1px;
+}
+

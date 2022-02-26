@@ -1,6 +1,7 @@
 import Axios from "axios";
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import "./Signup.css";
 
 function Signup() {
     const [usernameReg, setUsernameReg] = React.useState([]);
@@ -50,44 +51,42 @@ if(user){
 
   return (
     <div>
-        
-        <div className="Register">
-        <h1> Register </h1>
-        <label>Username</label>
+                <h1> Register </h1>
+        <div className="Register grid">
         <input
           type="text"
+          placeholder="Username"
           onChange={(e) => {
             setUsernameReg(e.target.value);
           }}
         />
-        <label>Password</label>
         <input
-          type="text"
+          type="password"
+          placeholder="Password"
           onChange={(e) => {
             setPasswordReg(e.target.value);
           }}
         />
-        <label>Confirm Password</label>
         <input
-          type="text"
+          type="password"
           placeholder="Re-type Password"
           onChange={(e) => {
             setPasswordConfirm(e.target.value);
           }}
         />
-        <label>E-mail</label>
         <input
           type="text"
+          placeholder="E-Mail"
           onChange={(e) => {
             setEmailReg(e.target.value);
           }}
         />
-        <button onClick={register}> Register </button>
-      </div>
-      <button onClick={() => {
+        <button className="btn-register" onClick={register}> </button>
+      
+      <button className="btn-default" onClick={() => {
         navigate("/")
       }}>Return to login</button>
-
+</div>
     </div>
   )
 }

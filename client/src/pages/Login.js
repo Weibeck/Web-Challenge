@@ -4,8 +4,6 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  // const [listOfUsers, setListofUsers] = React.useState([]);
-
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [user, setUser] = React.useState();
@@ -16,6 +14,8 @@ function Login() {
     if (UserLoggedIn) {
       const UserFound = UserLoggedIn;
       setUser(UserFound);
+      console.log(UserLoggedIn);
+      console.log(UserFound);
     }
   }, []);
 
@@ -45,26 +45,24 @@ function Login() {
     });
   };
 
-  /* React.useEffect(() => {
-    Axios.get("http://localhost:3001/users").then((response) => {
-      setListofUsers(response.data);
-    });
-  }, []);*/
-
   if (user) {
     console.log(user);
     return (
       <div>
         <h1>{user.username}Already logged in!</h1>
-        <button
-          onClick={() => {
-            navigate("/profile");
-          }}
-        >
-          {" "}
-          Return to your Profile
-        </button>
-        <button onClick={logOut}> Log Out</button>
+          <button
+            className="btn-default"
+            onClick={() => {
+              navigate("/profile");
+            }}
+          >
+            {" "}
+            Return to your Profile
+          </button>
+          <button className="btn-default" onClick={logOut}>
+            {" "}
+            Log Out
+          </button>
       </div>
     );
   } else {
@@ -73,21 +71,25 @@ function Login() {
         <div className="Login">
           <h1 className="top-pos"> Hackathon </h1>
           <div>
-            <input className="child-container left"
+            <input
+              className="child-container left"
               type="text"
               placeholder="Username"
               onChange={(e) => {
                 setUsername(e.target.value);
               }}
             />
-            <input className="child-container right"
+            <input
+              className="child-container right"
               type="password"
               placeholder="Password"
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
-            <button className="login-btn" onClick={login}> </button>
+            <button className="login-btn" onClick={login}>
+              {" "}
+            </button>
           </div>
         </div>
 
