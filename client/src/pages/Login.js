@@ -14,8 +14,6 @@ function Login() {
     if (UserLoggedIn) {
       const UserFound = UserLoggedIn;
       setUser(UserFound);
-      console.log(UserLoggedIn);
-      console.log(UserFound);
     }
   }, []);
 
@@ -35,9 +33,9 @@ function Login() {
       username: username,
       password: password,
     }).then((res) => {
-      if (res.data.message === null) {
+      if (res.data.username === username && res.data.password === password) {
         setUser(res.data);
-        localStorage.setItem("user", res.data);
+        localStorage.setItem("user", JSON.stringify(res.data));
         navigate("/profile");
       } else {
         setLoggedinStatus(res.data.message);
@@ -46,7 +44,6 @@ function Login() {
   };
 
   if (user) {
-    console.log(user);
     return (
       <div>
         <h1>{user.username}Already logged in!</h1>
