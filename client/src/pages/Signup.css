@@ -1,69 +1,68 @@
 h1 {
-    letter-spacing: 1px;
-    text-align: center;
-    color: white;
-    margin-bottom: 80px;
-  }
-
-.grid{
-    display: grid;
-    grid-template-columns: 475px 475px;
-    grid-template-rows: auto auto;
-    grid-gap: 90px;
-    margin: 0 auto;
-    justify-content: center;
+  letter-spacing: 1px;
+  text-align: center;
+  color: white;
+  margin-bottom: 80px;
 }
 
-.item{
-    width: 420px;
-    height: 310px;
+.grid {
+  display: grid;
+  grid-template-columns: 475px 475px;
+  grid-template-rows: auto auto;
+  grid-gap: 90px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.item {
+  width: 420px;
+  height: 310px;
 }
 
 input {
-    background: none;
-    border: 0;
-    border-bottom: 4px solid white;
-    width:100%;
-    color: white;
-    font-size: 35px;
-  }
-  
-  input::placeholder {
-    color: white;
-    opacity: 1;
-  }
-  
-  input:focus {
-    outline: 0;
-  }
-  input:focus::placeholder {
-    color: transparent;
-  }
-.btn-register{
-    background: url("../assets/Register_button.webp") no-repeat;
-    cursor: pointer;
-    border: none;
-    width: 421px;
-    height: 93px;
+  background: none;
+  border: 0;
+  border-bottom: 4px solid white;
+  width: 100%;
+  color: white;
+  font-size: 35px;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+input:focus {
+  outline: 0;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+.btn-register {
+  background: url("../assets/Register_button.webp") no-repeat;
+  cursor: pointer;
+  border: none;
+  width: 421px;
+  height: 93px;
 }
 
 .btn-default {
-	background-color:#ffe65a;
-	border-radius:50px;
-	border:1px solid #ffe75e;
-	display:inline-block;
-	cursor:pointer;
-	color:black;
-	font-family:Verdana;
-	font-size:30px;
-	padding:25px 59px;
-	text-decoration:none;
+  background-color: #ffe65a;
+  border-radius: 50px;
+  border: 1px solid #ffe75e;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: Verdana;
+  font-size: 30px;
+  padding: 25px 59px;
+  text-decoration: none;
 }
 .btn-default:hover {
-	background-color:#ffe75e;
+  background-color: #ffe75e;
 }
 .btn-default:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
-

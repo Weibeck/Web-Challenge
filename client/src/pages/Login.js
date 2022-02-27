@@ -3,12 +3,14 @@ import React from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
+// User
 function Login() {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [user, setUser] = React.useState();
   const [loggedinStatus, setLoggedinStatus] = React.useState([]);
 
+  // load with site - check login status
   React.useEffect(() => {
     const UserLoggedIn = localStorage.getItem("user");
     if (UserLoggedIn) {
@@ -17,6 +19,7 @@ function Login() {
     }
   }, []);
 
+  // Log out function
   const logOut = () => {
     setUser({});
     setUsername("");
@@ -25,6 +28,7 @@ function Login() {
     window.location.reload(false);
   };
 
+  // enable navigate
   let navigate = useNavigate();
 
   // Login checks
@@ -43,25 +47,27 @@ function Login() {
     });
   };
 
+  // if user exist in localstorage
   if (user) {
     return (
       <div>
         <h1>{user.username}Already logged in!</h1>
-          <button
-            className="btn-default"
-            onClick={() => {
-              navigate("/profile");
-            }}
-          >
-            {" "}
-            Return to your Profile
-          </button>
-          <button className="btn-default" onClick={logOut}>
-            {" "}
-            Log Out
-          </button>
+        <button
+          className="btn-default"
+          onClick={() => {
+            navigate("/profile");
+          }}
+        >
+          {" "}
+          Return to your Profile
+        </button>
+        <button className="btn-default" onClick={logOut}>
+          {" "}
+          Log Out
+        </button>
       </div>
     );
+    // else load the main login page
   } else {
     return (
       <div className="container">

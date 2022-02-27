@@ -20,7 +20,7 @@ function Signup() {
     }
   }, []);
 
-  // Register handling => Ship it to submit 
+  // Register handling => Ship it to submit
   const register = (e) => {
     e.preventDefault();
     Axios.get("http://localhost:3001/Users").then((res) => submit(res.data));
@@ -46,73 +46,69 @@ function Signup() {
   };
 
   if (user) {
-
-
-    return(<div>
-      <h1>{user.username}Already logged in!</h1>
-      <button
-        className="btn-default"
-        onClick={() => {
-          navigate("/profile");
-        }}
-      >
-        {" "}
-        Return to your Profile
-      </button>
-    </div>
-    );
-  }else{
-
-  
-
-  return (
-    <div>
-      <h1> Register </h1>
-      <div className="Register grid">
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => {
-            setUsernameReg(e.target.value);
-          }}
-        />
-        <input
-          type="email"
-          placeholder="E-Mail"
-          onChange={(e) => {
-            setEmailReg(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => {
-            setPasswordReg(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="Re-type Password"
-          onChange={(e) => {
-            setPasswordConfirm(e.target.value);
-          }}
-        />
+    return (
+      <div>
+        <h1>{user.username}Already logged in!</h1>
         <button
           className="btn-default"
           onClick={() => {
-            navigate("/");
+            navigate("/profile");
           }}
         >
-          Return to login
-        </button>
-
-        <button className="btn-register" onClick={register}>
           {" "}
+          Return to your Profile
         </button>
       </div>
-    </div>
-  );
-}
+    );
+  } else {
+    return (
+      <div>
+        <h1> Register </h1>
+        <div className="Register grid">
+          <input
+            type="text"
+            placeholder="Username"
+            onChange={(e) => {
+              setUsernameReg(e.target.value);
+            }}
+          />
+          <input
+            type="email"
+            placeholder="E-Mail"
+            onChange={(e) => {
+              setEmailReg(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => {
+              setPasswordReg(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Re-type Password"
+            onChange={(e) => {
+              setPasswordConfirm(e.target.value);
+            }}
+          />
+          <button
+            className="btn-default"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Return to login
+          </button>
+
+          <button className="btn-register" onClick={register}>
+            {" "}
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Signup;
