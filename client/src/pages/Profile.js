@@ -30,7 +30,7 @@ function Profile() {
   React.useEffect(() => {
     findLocation();
   }, []);
-  // ${weather.weather[0].icon}
+  
   return (
     <div>
       <h1> Good day {user.username}</h1>
@@ -42,7 +42,7 @@ function Profile() {
             <>
               <div className="grid-small-profile">
                 <img
-                  src={`${process.env.PUBLIC_URL}/assets/weatherstatus/${weather.weather[0].icon}.webp`}
+                  src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
                   alt="weather status icon"
                   className="weather-icon"
                 />
