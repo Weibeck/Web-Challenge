@@ -50,8 +50,9 @@ function Login() {
   // if user exist in localstorage
   if (user) {
     return (
-      <div>
-        <h1>{user.username}Already logged in!</h1>
+      
+      <div className="grid-small-profile">
+        <h1 className="grid-row-2">Already logged in!</h1>
         <button
           className="btn-default"
           onClick={() => {

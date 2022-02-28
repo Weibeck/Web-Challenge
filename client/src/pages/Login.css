@@ -76,6 +76,16 @@ input:focus::placeholder {
   position: absolute;
 }
 
+.grid-small-profile {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 15px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+
 .text-yellow {
   color: yellow;
 }

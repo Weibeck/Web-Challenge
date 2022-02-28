@@ -3,11 +3,29 @@ import React from "react";
 import "./Profile.css";
 
 function Profile() {
+
+  // Get News
+  async function getNews() {
+    const text = await axios.get('https://cors-anywhere.herokuapp.com/https://feeds.bbci.co.uk/news/rss.xml').then(res => res.data);
+    const xmlDoc = new DOMParser().parseFromString(text, "text/xml");
+    const items = Array.from(xmlDoc.querySelectorAll("item")).map(item => ({
+      title: item.querySelector("title").textContent,
+      description: item.querySelector("description").childNodes[0].data
+    }));
+    console.log(items)
+    setRssData(items);
+  }
+
+
   // Get username from localstorage
   const user = JSON.parse(localStorage.getItem("user"));
 
   // Weather Data & Location
   const [weather, setWeather] = React.useState([]);
+
+  // RSS Feed
+  const [rssData, setRssData] = React.useState([]);
+
 
   // Find Location
   function findLocation() {
@@ -27,8 +45,10 @@ function Profile() {
     }
   }
 
+  // Run on page entry
   React.useEffect(() => {
     findLocation();
+    getNews();
   }, []);
   
   return (
@@ -64,6 +84,17 @@ function Profile() {
 
         <div className="item-profile">
           <h2> News </h2>
+<div>
+{rssData[0] ? (
+  <>
+  <h2 className="title-news">{rssData[0].title}</h2>
+  <p className="news-body">{rssData[0].description}</p>
+  </>
+  ):(
+  <p>Loading...</p>)
+  }
+
+</div>
         </div>
 
         <div className="item-profile">

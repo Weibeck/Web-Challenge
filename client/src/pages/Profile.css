@@ -9,7 +9,18 @@ h2 {
   font-size: 30px;
 }
 
-p {
+.title-news{
+    text-align: center;
+    font-weight: 600;
+    font-size: 27px;
+    margin: 20px;
+}
+
+.news-body {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    margin:20px;
 }
 
 .weather-icon {
