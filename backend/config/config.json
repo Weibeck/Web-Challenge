@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "YouSuck#321",
+    "password": null,
     "database": "webchallengedb",
     "host": "127.0.0.1",
     "dialect": "mysql"
