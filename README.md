@@ -1,6 +1,6 @@
 # Web-Challenge
 
-Tech Used
+## Tech Used
 - ReactJS
 - Axios
 - Sequelizer
@@ -8,7 +8,7 @@ Tech Used
 - Cors
 - mySQL for db (Server Sided)
 
-
+## Check list
 - ✔️ Sign up / sign in 
 - ✔️ DB design 
 - ✔️ Visual Design implementation 
