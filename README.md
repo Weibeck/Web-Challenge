@@ -1,6 +1,6 @@
 # Web-Challenge
 
-##Tech Used
+#Tech Used
 - ReactJS
 - Axios
 - Sequelizer
