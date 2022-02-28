@@ -16,8 +16,9 @@ const registerRouter = require("./routes/Register");
 app.use("/users", userRouter);
 app.use("/register", registerRouter);
 
+// Run database
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {
-    console.log("Server Up - 3001");
+    console.log("Server port 3001");
   });
 });
