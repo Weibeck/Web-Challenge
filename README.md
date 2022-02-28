@@ -6,3 +6,4 @@ Tech Used
 - Sequelizer
 - React Router Dom
 - Cors
+- mySQL for db (Server Sided)
